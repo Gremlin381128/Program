@@ -55,5 +55,27 @@ namespace LibraryBLL
             }
             return bookValid;
         }
+        BookDAL dalBook = new BookDAL();
+        public void AddBookBLL(int bookId, string bookName, string BookAuthorName, string BookAuthorSurname, DateTime BookDate)
+        {
+            bool isValidated = BookValidation(bookId, bookName, BookAuthorName, BookAuthorSurname, BookDate);
+            if (isValidated)
+            {
+                /*BookDAL dalBook = new BookDAL();*/
+                bool isDone = dalBook.AddBooksDAL(bookId, bookName, BookAuthorName, BookAuthorSurname, BookDate);
+                if (isDone == true)
+                {
+                    Console.WriteLine("Książka została dodana");
+                }
+                else
+                {
+                    Console.WriteLine("Spróbuj ponownie");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Spróbuj ponownie");
+            }
+        }
     }
 }
