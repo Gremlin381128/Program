@@ -77,6 +77,18 @@ namespace LibraryBLL
                 Console.WriteLine("Spróbuj ponownie");
             }
         }
+        public void FindBookNameBLL(int bookId, string bookName, string BookAuthorName, string BookAuthorSurname, DateTime BookDate)
+        {
+                bool isDone = dalBook.FindBooksNameDAL(bookId, bookName, BookAuthorName, BookAuthorSurname, BookDate);
+                if (isDone==true)
+                {
+                    Console.WriteLine("Książka znaleziona");
+                }
+                else
+                {
+                    Console.WriteLine("Spróbuj ponownie");
+                }
+        }
         public List<Book> GetAllBookBLL()
         {
             List<Book> books = dalBook.GetAllBooksDAL();

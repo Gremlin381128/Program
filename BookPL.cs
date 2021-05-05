@@ -32,6 +32,21 @@ namespace Yes
                 Console.WriteLine("Wprowadź poprawne dane");
             }
         }
+        public void FindBookName()
+        {
+            try
+            {
+                Console.WriteLine("Wprowadź dane szukanej książki");
+                Console.Write("Tytuł książki: ");
+                book.BookName = Console.ReadLine();
+                BookBLL findBook = new BookBLL();
+                findBook.FindBookNameBLL(book.BookId, book.BookName, book.BookAuthorName, book.BookAuthorSurname, book.BookDate);
+            }
+            catch
+            {
+                Console.WriteLine("Wprowadzono niepoprawną wartość");
+            }
+        }
         public void GetAllBook()
         {
             List<Book> books = new List<Book>();

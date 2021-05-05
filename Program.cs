@@ -26,7 +26,8 @@ namespace Yes
                             Add.AddBook();
                             break;
                         case 2:
-                            
+                            BookPL ShowBookName = new BookPL();
+                            ShowBookName.FindBookName();
                             break;
                         case 3:
                             
