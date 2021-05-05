@@ -32,5 +32,18 @@ namespace Yes
                 Console.WriteLine("Wprowadź poprawne dane");
             }
         }
+        public void GetAllBook()
+        {
+            List<Book> books = new List<Book>();
+            BookBLL bookTemp = new BookBLL();
+            books = bookTemp.GetAllBookBLL();
+            Console.WriteLine("---------------------------Lista-Książek---------------------------");
+            Console.WriteLine("--Id-----Tytuł---------------Imię-i-Nazwisko-Autora-------------------Data-----");
+            foreach (Book book in books)
+            {
+                Console.WriteLine("  " + book.BookId + "\t" + book.BookName + "\t  " + book.BookAuthorName + "\t" + book.BookAuthorSurname + "\t" + book.BookDate);
+            }
+            Console.WriteLine("----------------------------------------------------------------");
+        }
     }
 }

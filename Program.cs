@@ -22,7 +22,8 @@ namespace Yes
                     switch (logCase)
                     {
                         case 1:
-                            
+                            BookPL Add = new BookPL();
+                            Add.AddBook();
                             break;
                         case 2:
                             
@@ -31,7 +32,8 @@ namespace Yes
                             
                             break;
                         case 4:
-                            
+                            BookPL ShowAll = new BookPL();
+                            ShowAll.GetAllBook();
                             break;
                         case 5:
                             logLoop = false;

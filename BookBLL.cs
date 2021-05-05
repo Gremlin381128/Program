@@ -77,5 +77,10 @@ namespace LibraryBLL
                 Console.WriteLine("Spróbuj ponownie");
             }
         }
+        public List<Book> GetAllBookBLL()
+        {
+            List<Book> books = dalBook.GetAllBooksDAL();
+            return books;
+        }
     }
 }
