@@ -47,5 +47,25 @@ namespace LibraryDAL
             }
             return isDone;
         }
+        public bool FindBooksAuthorDAL(int bookId, string bookName, string bookAuthorName, string bookAuthorSurname, DateTime bookDate)
+        {
+            bool isDone = false;
+            try
+            {
+                Book findBook = books.Find(s => s.BookAuthorName == bookAuthorName && s.BookAuthorSurname == bookAuthorSurname);
+                Console.WriteLine("--------------------Lista-Książek------------------------");
+                Console.WriteLine("--Id-----Tytuł-----Imię-i-Nazwisko-Autora---------Data-----");
+                //foreach (Book book in books)
+                //{
+                    Console.WriteLine("  " + findBook.BookId + "\t" + findBook.BookName + "\t  " + findBook.BookAuthorName + "\t" + findBook.BookAuthorSurname + "\t" + findBook.BookDate);
+                //}
+                isDone = true;
+            }
+            catch(ApplicationException)
+            {
+                isDone = false;
+            }
+            return isDone;
+        }
     }
 }

@@ -30,7 +30,8 @@ namespace Yes
                             ShowBookName.FindBookName();
                             break;
                         case 3:
-                            
+                            BookPL ShowBookAuthor = new BookPL();
+                            ShowBookAuthor.FindBookAuthor();
                             break;
                         case 4:
                             BookPL ShowAll = new BookPL();
